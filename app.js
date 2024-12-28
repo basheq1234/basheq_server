@@ -17,7 +17,7 @@ mongoose.connection.on("connected", () => {
   console.log("mongo connected");
 });
 
-app.get('/getBtata', (req, res) => {
+app.get('/ ', (req, res) => {
     res.status(200).json({
         name: "Btata",
         price: "5$",
