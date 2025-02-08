@@ -3,13 +3,13 @@
 const PRODUCT_MODEL = require("../models/product.model")
 
 const createproducts = async (req, res) => {
-    const { productsName, email, phone, password } = req.body
+    const { productsName, img,price , quantity } = req.body
     try {
         const products = await PRODUCT_MODEL.create({
             productsName: productsName,
-            email: email,
-            password: password,
-            phone: phone,
+            img: img,
+            price: price,
+            quantity: quantity,
         })
         res.status(200).json({
             success: true,
@@ -47,10 +47,10 @@ const Findproducts = async (req, res) => {
 }
 
 const deleteproducts = async (req, res) => {
-    const { phone } = req.body
+    const { productsName } = req.body
     try {
         const products = await PRODUCT_MODEL.deleteOne({
-            phone: phone
+            productsName: productsName
         })
 
         res.status(200).json({
