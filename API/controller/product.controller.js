@@ -21,7 +21,7 @@ const createproducts = async (req, res) => {
         res.status(400).json({
             success: false,
             error: error.name,
-            massage: error.massage,
+            message: error.message,
             error: error
         })
 
