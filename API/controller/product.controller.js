@@ -3,13 +3,14 @@
 const PRODUCT_MODEL = require("../models/product.model")
 
 const createproducts = async (req, res) => {
-    const { productName, img, price, quantity } = req.body
+    const { productName, img, price, quantity, type } = req.body
     try {
         const products = await PRODUCT_MODEL.create({
             productName: productName,
             img: img,
             price: price,
             quantity: quantity,
+            type: type,
         })
         res.status(200).json({
             success: true,
@@ -68,9 +69,6 @@ const deleteproducts = async (req, res) => {
         })
     }
 }
-
-
-
 
 module.exports = {
     createproducts,
